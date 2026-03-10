@@ -1,0 +1,59 @@
+enabled: true
+production:
+  enabled: true
+
+# Navigation – Einträge im Header-Menü
+navbar:
+  - title: Leistungen
+    url: "/#leistungen"
+  - title: Preise
+    url: /preise
+  - title: Terminbuchung
+    url: /terminbuchungen
+  - title: Managed Nodes
+    url: /managed-nodes
+  - title: Über mich
+    url: "/#ueber-mich"
+  - title: Kontakt
+    dropdown: true
+    items:
+      - title: Anrufen
+        url: "tel:+4923054459886"
+        icon: phone
+      - title: Signal
+        url: /signal
+        icon: message-circle
+      - title: E-Mail schreiben
+        url: "mailto:service@neuhaus-it.de"
+        icon: mail
+      - title: Termin buchen
+        url: /terminbuchungen
+        icon: calendar
+      - title: Kontaktformular
+        url: "https://cloud.neuhaus-it.de/apps/forms/s/BRRq2H9AQYTRJmnD39iis55w"
+        icon: file-text
+        external: true
+
+# Kontaktdaten (an einer Stelle pflegen, überall verfügbar)
+contact:
+  name: "Neuhaus-IT"
+  owner: "Till Neuhaus"
+  phone: "+49 (0) 2305 44 59 886"
+  phone_uri: "tel:+4923054459886"
+  email: "service@neuhaus-it.de"
+  address_main: "Gerther Str. 65, 44577 Castrop-Rauxel"
+  address_office: "Erinstr. 7, 44575 Castrop-Rauxel"
+  signal_url: "/signal"
+
+# Footer-Links (externe Angebote)
+footer_offers:
+  - title: Computerhilfe für Privat
+    url: "https://computerhilfe-castrop-rauxel.de"
+  - title: IT-Service für Unternehmen
+    url: "https://it-service-castrop-rauxel.de"
+  - title: KI-Angebote
+    url: "https://ki-castrop-rauxel.de"
+  - title: Smart Home Lösungen
+    url: "https://smart-home-castrop-rauxel.de"
+
+footer_servicegebiete: "Castrop-Rauxel, Dortmund, Bochum, Herne, Recklinghausen, Waltrop, Herten, Oer-Erkenschwick, Datteln, Lünen, Schwerte, Witten, Hattingen, Gelsenkirchen, Essen und Umgebung"

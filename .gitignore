@@ -1,0 +1,24 @@
+# Grav-Core (wird separat installiert, nicht eingecheckt)
+/bin/
+/system/
+/vendor/
+/webserver-configs/
+
+# Laufzeit-Verzeichnisse
+/cache/
+/logs/
+/tmp/
+/backup/
+/assets/
+
+# Nutzerdaten (nicht ins Repo)
+/user/data/
+/user/accounts/
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

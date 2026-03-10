@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+{% include 'partials/subpage-hero.html.twig' %}
+
+<div class="section">
+  <div class="container">
+
+    {# Preistabelle #}
+    <section aria-labelledby="preise-title">
+      <header class="section-header" style="margin-block-start: 0;">
+        <h2 id="preise-title">Faire Preisstruktur</h2>
+      </header>
+
+      <div class="card" style="max-width: 640px; margin-inline: auto;">
+        <div class="card-header">
+          <h3 class="card-title">Stundenpreise</h3>
+          <p class="card-description">Transparente Abrechnung nach tatsächlichem Zeitaufwand</p>
+        </div>
+        <div class="card-content">
+          <table class="price-table" aria-label="Preisliste">
+            <thead>
+              <tr>
+                <th scope="col">Leistung</th>
+                <th scope="col" class="text-right">Netto</th>
+                <th scope="col" class="text-right">Brutto</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in page.header.preise %}
+                <tr>
+                  <td>{{ row.leistung }}</td>
+                  <td class="text-right">{{ row.netto }}</td>
+                  <td class="text-right price-brutto">{{ row.brutto }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    {# Service-Optionen #}
+    <section class="mt-12" aria-labelledby="optionen-title">
+      <h3 id="optionen-title" style="text-align: center; margin-block-end: var(--space-6);">Service-Optionen</h3>
+      <div class="grid-auto-md">
+        {% for option in page.header.service_optionen %}
+          <div class="card card-feature">
+            <strong>{{ option.titel }}</strong>
+            <p class="text-muted text-sm" style="margin: 0;">{{ option.text }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    {# CTA #}
+    <section class="section section-sm bg-subtle" style="margin-block-start: var(--space-12); border-radius: var(--radius-xl); text-align: center; padding: var(--space-10);" aria-labelledby="preise-cta-title">
+      <h3 id="preise-cta-title">Jetzt Termin buchen</h3>
+      <p class="text-muted" style="margin-block: var(--space-3) var(--space-6);">
+        Kontaktieren Sie mich für Ihre kostenlose Erstberatung
+      </p>
+      <div class="btn-group justify-center">
+        <a href="/terminbuchungen" class="btn btn-primary">Zur Terminbuchung</a>
+        <a href="tel:+4923054459886" class="btn btn-secondary">Anrufen</a>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+{% endblock %}

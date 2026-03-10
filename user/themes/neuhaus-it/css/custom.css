@@ -1,0 +1,225 @@
+/**
+ * custom.css – Grav-Theme-spezifische Ergänzungen
+ *
+ * Alles was über das Designsystem hinausgeht:
+ * seitenspezifische Layouts, Hero-Styles, Grav-Inhalts-Rendering.
+ */
+
+/* ── Hero (Startseite) ──────────────────────────────────────────────────── */
+.hero-section {
+  position:   relative;
+  overflow:   hidden;
+  padding-block: var(--space-20);
+  min-height: 80vh;
+  display:    flex;
+  align-items: center;
+}
+
+.hero-bg {
+  position:            absolute;
+  inset:               0;
+  background-size:     cover;
+  background-position: center;
+  background-repeat:   no-repeat;
+}
+
+.hero-overlay {
+  position:   absolute;
+  inset:      0;
+  background: var(--gradient-hero);
+}
+
+.hero-inner {
+  position:        relative;
+  display:         grid;
+  grid-template-columns: 1fr 380px;
+  gap:             var(--space-12);
+  align-items:     center;
+}
+
+.hero-text h1 {
+  font-size:   var(--font-size-5xl);
+  margin-block-end: var(--space-2);
+}
+
+.hero-subtitle {
+  font-size:   var(--font-size-lg);
+  color:       var(--color-fg-muted);
+  margin-block-end: var(--space-4);
+}
+
+.hero-lead {
+  margin-block-end: var(--space-8);
+  max-width: 52ch;
+}
+
+.hero-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.hero-card {
+  background: var(--color-surface-raised);
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-cards {
+    flex-direction: row;
+  }
+
+  .hero-text h1 {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-section {
+    padding-block: var(--space-12);
+    min-height: auto;
+  }
+
+  .hero-cards {
+    flex-direction: column;
+  }
+}
+
+/* ── Subpage Hero ───────────────────────────────────────────────────────── */
+.subpage-hero {
+  background:    var(--gradient-hero);
+  border-block-end: 1px solid var(--color-border);
+  padding-block: var(--space-12);
+}
+
+.subpage-hero-inner {
+  max-width: 700px;
+}
+
+.subpage-hero-title {
+  margin-block-end: var(--space-4);
+}
+
+.subpage-hero-description {
+  max-width: 60ch;
+}
+
+/* ── About Portrait ─────────────────────────────────────────────────────── */
+.about-portrait {
+  width:         100%;
+  max-width:     360px;
+  border-radius: var(--radius-xl);
+  box-shadow:    var(--shadow-brand-soft);
+  object-fit:    cover;
+}
+
+/* ── Maps Embed ─────────────────────────────────────────────────────────── */
+.maps-embed-wrapper {
+  border-radius: var(--radius-xl);
+  overflow:      hidden;
+  box-shadow:    var(--shadow-sm);
+}
+
+/* ── Preistabelle ───────────────────────────────────────────────────────── */
+.price-table {
+  width:           100%;
+  border-collapse: collapse;
+  font-size:       var(--font-size-sm);
+}
+
+.price-table th {
+  text-align:      left;
+  font-weight:     var(--font-weight-semibold);
+  padding:         var(--space-3) var(--space-4);
+  border-block-end: 2px solid var(--color-border);
+  color:           var(--color-fg-muted);
+  white-space:     nowrap;
+}
+
+.price-table td {
+  padding:          var(--space-3) var(--space-4);
+  border-block-end: 1px solid var(--color-border);
+  vertical-align:   middle;
+}
+
+.price-table tr:last-child td {
+  border-block-end: none;
+}
+
+.price-table .text-right { text-align: right; }
+.price-brutto { font-weight: var(--font-weight-semibold); color: var(--color-fg); }
+
+/* ── Download-Tabelle (Fernwartung) ─────────────────────────────────────── */
+.download-table {
+  width:           100%;
+  border-collapse: collapse;
+  font-size:       var(--font-size-sm);
+}
+
+.download-table th {
+  text-align:      left;
+  font-weight:     var(--font-weight-semibold);
+  padding:         var(--space-3) var(--space-4);
+  border-block-end: 2px solid var(--color-border);
+  color:           var(--color-fg-muted);
+}
+
+.download-table td {
+  padding:          var(--space-3) var(--space-4);
+  border-block-end: 1px solid var(--color-border);
+  vertical-align:   middle;
+}
+
+.download-table tr:last-child td {
+  border-block-end: none;
+}
+
+/* ── Impressum-Liste ────────────────────────────────────────────────────── */
+.impressum-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.impressum-list dt {
+  font-weight: var(--font-weight-semibold);
+  color:       var(--color-fg-muted);
+  white-space: nowrap;
+}
+
+.impressum-list dd {
+  margin: 0;
+  color:  var(--color-fg);
+}
+
+/* ── Copy-Button (Notepad++-Seite) ──────────────────────────────────────── */
+.copy-btn {
+  position:      absolute;
+  top:           var(--space-2);
+  right:         var(--space-2);
+  padding:       var(--space-1) var(--space-3);
+  font-size:     var(--font-size-xs);
+  font-family:   var(--font-family-base);
+  font-weight:   var(--font-weight-medium);
+  background:    var(--color-surface-raised);
+  border:        1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor:        pointer;
+  color:         var(--color-fg-muted);
+  transition:    background var(--transition-fast), color var(--transition-fast);
+}
+
+.copy-btn:hover { background: var(--color-bg-subtle); color: var(--color-fg); }
+.copy-btn.is-copied { background: var(--color-success); color: white; border-color: transparent; }
+
+/* ── Prose (Markdown-Inhalt) ────────────────────────────────────────────── */
+.prose h2 { margin-block: var(--space-8) var(--space-4); }
+.prose h3 { margin-block: var(--space-6) var(--space-3); }
+.prose h4 { margin-block: var(--space-4) var(--space-2); }
+.prose p  { margin-block-end: var(--space-4); }
+.prose ul, .prose ol { margin-block-end: var(--space-4); }
+.prose p:last-child  { margin-block-end: 0; }

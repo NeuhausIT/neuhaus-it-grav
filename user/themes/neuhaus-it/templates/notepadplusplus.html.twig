@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+{% include 'partials/subpage-hero.html.twig' %}
+
+<div class="section">
+  <div class="container container-narrow">
+
+    <div class="card" style="background: hsl(38 92% 50% / 0.1); border-color: hsl(38 92% 50% / 0.4); margin-block-end: var(--space-8);">
+      <strong>Anleitung:</strong>
+      <p style="margin-block-start: var(--space-2);">
+        Öffnen Sie eine Eingabeaufforderung (PowerShell) als Administrator
+        und führen Sie die folgenden Befehle nacheinander aus.
+      </p>
+    </div>
+
+    <div class="prose">
+      {{ page.content }}
+    </div>
+
+    <div class="mt-8">
+      <a href="https://notepad-plus-plus.org/downloads/"
+         class="btn btn-primary"
+         target="_blank" rel="noopener noreferrer">
+        Notepad++ herunterladen
+      </a>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Copy-Button für alle <pre><code>-Blöcke
+document.querySelectorAll('pre').forEach(function(pre) {
+  var btn = document.createElement('button');
+  btn.className = 'copy-btn';
+  btn.setAttribute('aria-label', 'Code kopieren');
+  btn.textContent = 'Kopieren';
+  pre.style.position = 'relative';
+  pre.appendChild(btn);
+
+  btn.addEventListener('click', function() {
+    var code = pre.querySelector('code');
+    navigator.clipboard.writeText(code ? code.textContent : pre.textContent).then(function() {
+      btn.textContent = 'Kopiert!';
+      btn.classList.add('is-copied');
+      setTimeout(function() {
+        btn.textContent = 'Kopieren';
+        btn.classList.remove('is-copied');
+      }, 2000);
+    });
+  });
+});
+</script>
+{% endblock %}

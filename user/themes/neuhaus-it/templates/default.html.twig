@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+  {% include 'partials/subpage-hero.html.twig' %}
+
+  <div class="section section-sm">
+    <div class="container container-narrow">
+      <div class="prose">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

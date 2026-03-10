@@ -1,0 +1,27 @@
+name: Neuhaus-IT
+version: 1.0.0
+description: "Professionelles Theme für neuhaus-it.de – basiert auf dem Neuhaus-IT Designsystem"
+icon: wrench
+author:
+  name: Till Neuhaus
+  email: service@neuhaus-it.de
+homepage: https://neuhaus-it.de
+license: CC-BY-NC-SA-4.0
+
+dependencies:
+  - { name: grav, version: ">=1.7.0" }
+
+form:
+  validation: loose
+  fields:
+    production.enabled:
+      type: toggle
+      label: Produktionsmodus
+      help: "Deaktiviert Debug-Hinweise im Frontend"
+      highlight: 1
+      default: 0
+      options:
+        1: Aktiv
+        0: Inaktiv
+      validate:
+        type: bool

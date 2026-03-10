@@ -1,0 +1,35 @@
+home:
+  alias: /home
+
+pages:
+  theme: neuhaus-it
+
+cache:
+  enabled: true
+  driver: auto
+
+session:
+  enabled: true
+  timeout: 1800
+
+languages:
+  supported:
+    - de
+  default_lang: de
+  include_default_lang: false
+
+errors:
+  display: 0
+  log: true
+
+debugger:
+  enabled: false
+
+twig:
+  cache: true
+  debug: false
+  auto_reload: true
+
+assets:
+  css_pipeline: false
+  js_pipeline: false

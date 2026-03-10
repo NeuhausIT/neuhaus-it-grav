@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+{% include 'partials/subpage-hero.html.twig' %}
+
+<div class="section">
+  <div class="container">
+
+    {# Support vs. Managed Erklärung #}
+    <section aria-labelledby="fw-typen-title">
+      <header class="section-header" style="margin-block-start: 0;">
+        <h2 id="fw-typen-title">Support- vs. Managed-Nodes</h2>
+      </header>
+      <div class="grid-2">
+        <article class="card card-feature">
+          <div class="card-header">
+            <h3 class="card-title">Support-Nodes</h3>
+            <p class="card-description">Für gelegentliche Hilfestellungen – nur nach ausdrücklicher Zustimmung</p>
+          </div>
+          <ul class="card-feature-list">
+            <li>Sie behalten jederzeit die volle Kontrolle</li>
+            <li>Verbindung nur bei aktiver Freigabe</li>
+            <li>Ideal für spontane Support-Anfragen</li>
+          </ul>
+        </article>
+        <article class="card card-feature">
+          <div class="card-header">
+            <h3 class="card-title">Managed-Nodes</h3>
+            <p class="card-description">Für regelmäßige Wartungsarbeiten – zusätzlich in Ihrer Abwesenheit</p>
+          </div>
+          <ul class="card-feature-list">
+            <li>Wartung außerhalb der Geschäftszeiten möglich</li>
+            <li>Unbeaufsichtigter Zugriff mit Passwort</li>
+            <li>Ideal für Managed-Server und Workstations</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    {# Download-Matrix #}
+    <section class="mt-12" aria-labelledby="fw-downloads-title">
+      <h2 id="fw-downloads-title" style="margin-block-end: var(--space-6);">Node-Downloads</h2>
+      <div class="card" style="overflow-x: auto;">
+        <table class="download-table" aria-label="RustDesk Download-Matrix">
+          <thead>
+            <tr>
+              <th scope="col">Betriebssystem</th>
+              <th scope="col">Support-Node</th>
+              <th scope="col">Managed-Node</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for os in page.header.downloads %}
+              <tr>
+                <td><strong>{{ os.os }}</strong></td>
+                <td>
+                  <a href="https://downloads.neuhaus-it.de/{{ os.support }}"
+                     class="btn btn-outline btn-sm">
+                    Download
+                  </a>
+                </td>
+                <td>
+                  <a href="https://downloads.neuhaus-it.de/{{ os.managed }}"
+                     class="btn btn-secondary btn-sm">
+                    Download
+                  </a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    {# Datenschutz #}
+    <section class="mt-12" aria-labelledby="fw-datenschutz-title">
+      <div class="card" style="background: var(--color-bg-subtle);">
+        <h3 id="fw-datenschutz-title" style="margin-block-end: var(--space-4);">Datenschutz und Sicherheit</h3>
+        <p class="text-muted" style="margin-block-end: var(--space-4);">
+          Neuhaus-IT setzt RustDesk statt TeamViewer/AnyDesk ein – auf einem eigenen,
+          selbst verwalteten Server.
+        </p>
+        <div class="grid-2">
+          <ul class="card-feature-list">
+            <li>Vollständige Kontrolle über Ihre Daten</li>
+            <li>Keine Weitergabe an Dritte</li>
+          </ul>
+          <ul class="card-feature-list">
+            <li>DSGVO-konforme Verarbeitung</li>
+            <li>Maximale Transparenz durch Open Source</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+{% endblock %}

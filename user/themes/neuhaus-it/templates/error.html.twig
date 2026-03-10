@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<div class="section" style="text-align: center; min-height: 60vh; display: flex; align-items: center;">
+  <div class="container">
+    <p class="text-gradient" style="font-size: var(--font-size-5xl); font-weight: var(--font-weight-bold);">
+      {{ code ?? '404' }}
+    </p>
+    <h1 style="margin-block: var(--space-4);">
+      {% if code == 404 %}Seite nicht gefunden{% else %}Fehler{% endif %}
+    </h1>
+    <p class="lead text-muted" style="margin-block-end: var(--space-8);">
+      {% if code == 404 %}
+        Die gesuchte Seite existiert leider nicht (mehr).
+      {% else %}
+        Ein unerwarteter Fehler ist aufgetreten.
+      {% endif %}
+    </p>
+    <div class="btn-group justify-center">
+      <a href="/" class="btn btn-primary">Zur Startseite</a>
+      <a href="/kontakt-und-impressum" class="btn btn-secondary">Kontakt</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

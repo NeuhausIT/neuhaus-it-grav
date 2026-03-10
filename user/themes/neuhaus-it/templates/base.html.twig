@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    {%- if page.header.title is defined and page.header.title != site.title -%}
+      {{ page.title }} | {{ site.title }}
+    {%- else -%}
+      {{ site.title }} – IT-Dienstleister Castrop-Rauxel
+    {%- endif -%}
+  </title>
+
+  <meta name="description" content="{{ page.header.description ?? site.description }}">
+  <meta name="robots" content="{{ page.header.robots ?? 'index, follow' }}">
+
+  {# Open Graph #}
+  <meta property="og:title" content="{{ page.title }} | {{ site.title }}">
+  <meta property="og:description" content="{{ page.header.description ?? site.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url(true) }}">
+  <meta property="og:locale" content="de_DE">
+
+  <link rel="canonical" href="{{ page.url(true) }}">
+
+  {# Favicons – Dateien unter user/themes/neuhaus-it/images/ ablegen #}
+  <link rel="icon" type="image/svg+xml" href="{{ url('theme://images/favicon.svg') }}">
+  <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}">
+
+  {# Design System CSS (aus Submodul) #}
+  {% do assets.addCss('theme://design-system/dist/neuhaus-it.css', 90) %}
+
+  {# Theme-eigenes CSS (Grav-spezifische Ergänzungen) #}
+  {% do assets.addCss('theme://css/custom.css', 80) %}
+
+  {% block head %}{% endblock %}
+
+  {{ assets.css() }}
+</head>
+<body>
+
+  <a href="#main-content" class="sr-only" style="position:absolute;">Zum Hauptinhalt springen</a>
+
+  {% include 'partials/header.html.twig' %}
+
+  <main id="main-content" tabindex="-1">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include 'partials/footer.html.twig' %}
+
+  {# Theme JS #}
+  {% do assets.addJs('theme://js/app.js', 80) %}
+  {{ assets.js() }}
+
+  {% block scripts %}{% endblock %}
+
+</body>
+</html>

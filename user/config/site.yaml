@@ -1,0 +1,18 @@
+title: "Neuhaus-IT"
+description: "Ihr Systempartner für Unternehmen und Privathaushalte aus Castrop-Rauxel und Umgebung seit 2017 – persönlich, schnell, zuverlässig und kompetent."
+author:
+  name: "Till Neuhaus"
+  email: "service@neuhaus-it.de"
+
+metadata:
+  charset: utf-8
+  viewport: "width=device-width, initial-scale=1"
+  robots: "index, follow"
+
+taxonomies:
+  - category
+  - tag
+
+summary:
+  enabled: true
+  size: 300

@@ -1,0 +1,3 @@
+[submodule "user/themes/neuhaus-it/design-system"]
+	path = user/themes/neuhaus-it/design-system
+	url = ../neuhaus-it-design-system

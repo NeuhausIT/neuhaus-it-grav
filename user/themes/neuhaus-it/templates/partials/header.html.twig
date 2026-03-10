@@ -1,0 +1,90 @@
+{% set nav_config = theme_config.navbar %}
+{% set contact = theme_config.contact %}
+
+<header class="site-header" role="banner">
+  <nav class="nav-inner" aria-label="Hauptnavigation">
+
+    {# Logo #}
+    <a href="{{ base_url_absolute }}/" class="nav-logo" aria-label="{{ site.title }} – Zur Startseite">
+      <span class="nav-logo-mark" aria-hidden="true">N</span>
+      {{ site.title }}
+    </a>
+
+    {# Desktop-Navigation #}
+    <ul class="nav-links" role="list">
+      {% for item in nav_config %}
+        {% if item.dropdown %}
+          <li class="nav-dropdown">
+            <span class="nav-link nav-dropdown-trigger" tabindex="0" aria-haspopup="true" aria-expanded="false">
+              {{ item.title }}
+            </span>
+            <ul class="nav-dropdown-menu" role="menu">
+              {% for sub in item.items %}
+                <li role="none">
+                  <a href="{{ sub.url }}"
+                     class="nav-dropdown-item"
+                     role="menuitem"
+                     {% if sub.external ?? false %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                    {{ sub.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% else %}
+          <li>
+            <a href="{{ sub.url ?? item.url }}"
+               class="nav-link{% if page.url == item.url %} is-active{% endif %}"
+               {% if page.url == item.url %}aria-current="page"{% endif %}>
+              {{ item.title }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    {# CTA-Button Desktop #}
+    <div class="nav-cta">
+      <a href="{{ contact.phone_uri }}" class="btn btn-primary btn-sm">
+        Jetzt anrufen
+      </a>
+    </div>
+
+    {# Hamburger Mobile #}
+    <button class="nav-hamburger"
+            aria-controls="nav-mobile-menu"
+            aria-expanded="false"
+            aria-label="Menü öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </nav>
+
+  {# Mobile Menü #}
+  <nav id="nav-mobile-menu" class="nav-mobile" aria-label="Mobile Navigation" hidden>
+    {% for item in nav_config %}
+      {% if item.dropdown %}
+        <div class="nav-mobile-separator"></div>
+        {% for sub in item.items %}
+          <a href="{{ sub.url }}"
+             class="nav-link"
+             {% if sub.external ?? false %}target="_blank" rel="noopener noreferrer"{% endif %}>
+            {{ sub.title }}
+          </a>
+        {% endfor %}
+        <div class="nav-mobile-separator"></div>
+      {% else %}
+        <a href="{{ item.url }}"
+           class="nav-link{% if page.url == item.url %} is-active{% endif %}"
+           {% if page.url == item.url %}aria-current="page"{% endif %}>
+          {{ item.title }}
+        </a>
+      {% endif %}
+    {% endfor %}
+    <a href="{{ contact.phone_uri }}" class="btn btn-primary btn-full" style="margin-block-start: var(--space-3);">
+      Jetzt anrufen
+    </a>
+  </nav>
+</header>

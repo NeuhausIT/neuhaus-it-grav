@@ -1,0 +1,25 @@
+---
+title: "Fernwartung mit RustDesk"
+description: "Sichere Fernwartung über eigenen RustDesk-Server. Keine kommerziellen Anbieter – DSGVO-konform und Open Source."
+hero_description: "Sichere Remote-Unterstützung über unseren eigenen Server – ohne Umwege über kommerzielle Anbieter."
+
+downloads:
+  - os: "Windows"
+    support: "neuhaus-it-support.msi"
+    managed: "neuhaus-it-wartung.msi"
+  - os: "macOS (arm64)"
+    support: "neuhaus-it-support-arm64.dmg"
+    managed: "neuhaus-it-wartung-arm64.dmg"
+  - os: "macOS (x64)"
+    support: "neuhaus-it-support-x64.dmg"
+    managed: "neuhaus-it-wartung-x64.dmg"
+  - os: "Linux arm64 (.deb)"
+    support: "neuhaus-it-support-aarch64.deb"
+    managed: "neuhaus-it-wartung-aarch64.deb"
+  - os: "Linux x64 (.deb)"
+    support: "neuhaus-it-support-x86_64.deb"
+    managed: "neuhaus-it-wartung-x86_64.deb"
+  - os: "Android"
+    support: "neuhaus-it-support.apk"
+    managed: "neuhaus-it-wartung.apk"
+---

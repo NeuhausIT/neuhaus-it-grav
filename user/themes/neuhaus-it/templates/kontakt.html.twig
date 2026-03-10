@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% set contact = theme_config.contact %}
+
+{% block content %}
+
+{% include 'partials/subpage-hero.html.twig' %}
+
+<div class="section">
+  <div class="container">
+    <div class="grid-content-sidebar">
+
+      {# Hauptspalte: Visitenkarte + Karte #}
+      <div>
+
+        <section aria-labelledby="visitenkarte-title">
+          <h2 id="visitenkarte-title">Digitale Visitenkarte</h2>
+          <p class="text-muted" style="margin-block: var(--space-3) var(--space-6);">
+            Scannen Sie den QR-Code oder laden Sie meine Kontaktdaten direkt herunter.
+          </p>
+
+          <div class="flex gap-6" style="flex-wrap: wrap; align-items: flex-start;">
+            {% if page.media['vcard-qr-code.svg'] is defined %}
+              <img src="{{ page.media['vcard-qr-code.svg'].url }}"
+                   alt="QR-Code für vCard Neuhaus-IT"
+                   width="160" height="160"
+                   loading="lazy">
+            {% endif %}
+
+            <div class="flex flex-col gap-3">
+              <p><strong>{{ contact.name }}</strong><br>Inh. {{ contact.owner }}</p>
+              <p>
+                <a href="{{ contact.phone_uri }}">{{ contact.phone }}</a><br>
+                <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+              </p>
+              <a href="/vcard-neuhaus-it.vcf" class="btn btn-outline" download>
+                vCard herunterladen
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-12" aria-labelledby="standort-title">
+          <h3 id="standort-title">Mein Standort</h3>
+          <div style="margin-block-start: var(--space-4);">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.9!2d7.31!3d51.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sNeuhaus-IT!5e0!3m2!1sde!2sde!4v1"
+              width="100%"
+              height="320"
+              style="border:0; border-radius: var(--radius-xl);"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Standort Neuhaus-IT, Castrop-Rauxel">
+            </iframe>
+          </div>
+        </section>
+
+      </div>
+
+      {# Sidebar: Impressum #}
+      <aside>
+        <section aria-labelledby="impressum-title">
+          <h2 id="impressum-title" class="text-xl font-bold" style="margin-block-end: var(--space-4);">Impressum</h2>
+          <div class="card">
+            <h3 class="text-sm font-semibold text-muted" style="margin-block-end: var(--space-4); text-transform: uppercase; letter-spacing: var(--letter-spacing-wider);">
+              Angaben gemäß § 5 TMG
+            </h3>
+            <dl class="impressum-list">
+              <dt>Inhaber</dt>
+              <dd>{{ contact.name }}<br>Inh. {{ contact.owner }}</dd>
+
+              <dt>Unternehmenssitz</dt>
+              <dd>{{ contact.address_main }}</dd>
+
+              <dt>Geschäftsstelle</dt>
+              <dd>{{ contact.address_office }}</dd>
+
+              <dt>Telefon</dt>
+              <dd><a href="{{ contact.phone_uri }}">{{ contact.phone }}</a></dd>
+
+              <dt>E-Mail</dt>
+              <dd><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></dd>
+
+              <dt>USt-ID</dt>
+              <dd>DE320473148</dd>
+
+              <dt>Geltungsbereich</dt>
+              <dd>neuhaus-it.de · it-service-castrop-rauxel.de · computerhilfe-castrop-rauxel.de</dd>
+            </dl>
+          </div>
+        </section>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

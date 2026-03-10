@@ -1,0 +1,17 @@
+{#
+  Wiederverwendbarer Unterseiten-Header.
+  Variablen: title, description (beide optional, fallen auf page-Werte zurück)
+#}
+{% set hero_title = title ?? page.title %}
+{% set hero_desc  = description ?? page.header.hero_description ?? '' %}
+
+<section class="subpage-hero" aria-labelledby="subpage-hero-title">
+  <div class="container">
+    <div class="subpage-hero-inner">
+      <h1 id="subpage-hero-title" class="subpage-hero-title">{{ hero_title }}</h1>
+      {% if hero_desc %}
+        <p class="subpage-hero-description lead">{{ hero_desc }}</p>
+      {% endif %}
+    </div>
+  </div>
+</section>

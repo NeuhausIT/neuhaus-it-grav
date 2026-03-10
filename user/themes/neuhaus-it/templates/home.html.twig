@@ -1,0 +1,192 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+{# ── Hero ──────────────────────────────────────────────────────────────── #}
+<section class="hero-section" aria-labelledby="hero-title">
+  {% if page.media['hero-tech-background.jpg'] is defined %}
+    <div class="hero-bg" aria-hidden="true"
+         style="background-image: url('{{ page.media['hero-tech-background.jpg'].url }}')">
+    </div>
+  {% endif %}
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1 id="hero-title">{{ site.title }}</h1>
+      <p class="hero-subtitle">Inh. Till Neuhaus</p>
+      <p class="hero-lead lead">
+        Ihr Systempartner für Unternehmen und Privathaushalte aus
+        Castrop-Rauxel und Umgebung seit 2017 –
+        persönlich, schnell, zuverlässig und kompetent.
+      </p>
+      <div class="btn-group hero-cta">
+        <a href="/terminbuchungen" class="btn btn-primary btn-lg">Jetzt Termin buchen</a>
+        <a href="tel:+4923054459886" class="btn btn-secondary btn-lg">Anrufen</a>
+      </div>
+    </div>
+
+    <div class="hero-cards" aria-label="Zielgruppen">
+      <article class="card hero-card">
+        <div class="card-header">
+          <h2 class="card-title">Für Unternehmen</h2>
+          <p class="card-description">Professionelle IT-Lösungen für lokale Kleinunternehmen und Institutionen</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://it-service-castrop-rauxel.de"
+             class="btn btn-outline btn-full"
+             target="_blank" rel="noopener noreferrer">
+            IT-Service
+          </a>
+        </div>
+      </article>
+
+      <article class="card hero-card">
+        <div class="card-header">
+          <h2 class="card-title">Für Privatkunden</h2>
+          <p class="card-description">Individuelle Computerhilfe und Support für Privathaushalte</p>
+        </div>
+        <div class="card-footer">
+          <a href="https://computerhilfe-castrop-rauxel.de"
+             class="btn btn-outline btn-full"
+             target="_blank" rel="noopener noreferrer">
+            Computerhilfe
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# ── Dienstleistungen ──────────────────────────────────────────────────── #}
+<section class="section" id="leistungen" aria-labelledby="services-title">
+  <div class="container">
+    <header class="section-header">
+      <h2 id="services-title">Meine Dienstleistungen für Sie</h2>
+      <p class="lead text-muted">Drei Kernbereiche für Ihre komplette IT-Betreuung</p>
+    </header>
+
+    <div class="grid-3">
+      <article class="card card-feature card-interactive">
+        <div class="card-header">
+          <h3 class="card-title">Beratung</h3>
+          <p class="card-description">Kompetente Beratung für Ihre IT-Anschaffungen und technischen Fragen</p>
+        </div>
+        <ul class="card-feature-list">
+          <li>Hardware-Empfehlungen</li>
+          <li>Software-Beratung</li>
+          <li>Netzwerk-Planung</li>
+          <li>Sicherheitskonzepte</li>
+        </ul>
+      </article>
+
+      <article class="card card-feature card-interactive">
+        <div class="card-header">
+          <h3 class="card-title">Handel</h3>
+          <p class="card-description">Hochwertige IT-Produkte zu fairen Preisen direkt vom Fachmann</p>
+        </div>
+        <ul class="card-feature-list">
+          <li>Computer &amp; Laptops</li>
+          <li>Drucker &amp; Scanner</li>
+          <li>Netzwerk-Hardware</li>
+          <li>Software-Lizenzen</li>
+        </ul>
+      </article>
+
+      <article class="card card-feature card-interactive">
+        <div class="card-header">
+          <h3 class="card-title">Service</h3>
+          <p class="card-description">Professioneller Service und Reparaturen für all Ihre IT-Geräte</p>
+        </div>
+        <ul class="card-feature-list">
+          <li>Computer-Reparatur</li>
+          <li>Datenrettung</li>
+          <li>System-Installation</li>
+          <li>Wartung &amp; Updates</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# ── Über mich ─────────────────────────────────────────────────────────── #}
+<section class="section bg-subtle" id="ueber-mich" aria-labelledby="about-title">
+  <div class="container">
+    <div class="grid-content-sidebar">
+      <div>
+        <h2 id="about-title">Über mich</h2>
+        <p class="lead" style="margin-block: var(--space-4) var(--space-6);">
+          Seit 2017 unterstütze ich als IT-Dienstleister kleine Unternehmen und
+          Privathaushalte bei der digitalen Transformation mit einem besonderen
+          Fokus auf freie Software und digitale Souveränität.
+        </p>
+        <h3>Mein Leitbild</h3>
+        <p style="margin-block: var(--space-3) var(--space-6);">
+          Als IT-Systempartner setze ich auf individuelle und zuverlässige
+          Lösungen, um Ihre IT-Systeme optimal an die Anforderungen der
+          Digitalisierung anzupassen. Mit einem starken Fokus auf freie Software
+          (Open-Source-Software) unterstütze ich Sie dabei, digitale Souveränität
+          und Unabhängigkeit zu erreichen.
+        </p>
+        <a href="/leitbild" class="btn btn-outline">Mehr zum Leitbild</a>
+
+        <div class="grid-2" style="margin-block-start: var(--space-8);">
+          <div class="card">
+            <strong>Datenschutz</strong>
+            <p class="text-muted text-sm" style="margin-block-start: var(--space-1);">Höchste Sicherheit</p>
+          </div>
+          <div class="card">
+            <strong>Schnell</strong>
+            <p class="text-muted text-sm" style="margin-block-start: var(--space-1);">Kurzfristig verfügbar</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        {% if page.media['till-neuhaus-portrait.png'] is defined %}
+          <img src="{{ page.media['till-neuhaus-portrait.png'].url }}"
+               alt="Till Neuhaus, Inhaber Neuhaus-IT"
+               class="about-portrait"
+               width="400" height="400"
+               loading="lazy">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── Standort ──────────────────────────────────────────────────────────── #}
+<section class="section" aria-labelledby="location-title">
+  <div class="container">
+    <header class="section-header">
+      <h2 id="location-title">Mein Standort</h2>
+    </header>
+    <div class="maps-embed-wrapper">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.9!2d7.31!3d51.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sNeuhaus-IT!5e0!3m2!1sde!2sde!4v1"
+        width="100%"
+        height="400"
+        style="border:0; border-radius: var(--radius-xl);"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Standort Neuhaus-IT, Castrop-Rauxel">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+{# ── Fernwartungs-CTA ──────────────────────────────────────────────────── #}
+<section class="section section-sm bg-subtle" aria-label="Fernwartung">
+  <div class="container">
+    <div class="card card-highlight" style="text-align: center; padding: var(--space-10);">
+      <h3 style="color: white; margin-block-end: var(--space-3);">Fernwartung</h3>
+      <p style="color: white; margin-block-end: var(--space-6);">Schnelle Hilfe per Remote-Zugriff</p>
+      <a href="/fernwartung" class="btn" style="background: white; color: var(--brand-primary); font-weight: var(--font-weight-semibold);">
+        Fernwartung starten
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

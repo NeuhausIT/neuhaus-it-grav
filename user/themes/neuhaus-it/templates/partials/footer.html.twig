@@ -1,0 +1,73 @@
+{% set contact = theme_config.contact %}
+{% set offers = theme_config.footer_offers %}
+{% set servicegebiete = theme_config.footer_servicegebiete %}
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-main">
+
+    {# Spalte 1: Firmeninfo #}
+    <div class="footer-brand">
+      <a href="{{ base_url_absolute }}/" class="footer-logo" aria-label="{{ site.title }} – Zur Startseite">
+        <span class="footer-logo-mark" aria-hidden="true">N</span>
+        {{ contact.name }}
+      </a>
+      <p class="footer-tagline">
+        Experte für die Digitalisierung von kleinen und mittleren Unternehmen
+        mit Fokus auf freie Software und digitale Souveränität.
+      </p>
+      <ul class="footer-contact-list">
+        <li class="footer-contact-item">
+          <a href="{{ contact.phone_uri }}">{{ contact.phone }}</a>
+        </li>
+        <li class="footer-contact-item">
+          <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+        </li>
+        <li class="footer-contact-item">
+          {{ contact.address_office }}
+        </li>
+      </ul>
+    </div>
+
+    {# Spalte 2: Seiten #}
+    <nav class="footer-nav" aria-label="Seitennavigation">
+      <p class="footer-nav-title">Seiten</p>
+      <ul class="footer-nav-list" role="list">
+        <li><a href="/" class="footer-nav-link">Startseite</a></li>
+        <li><a href="/leitbild" class="footer-nav-link">Leitbild</a></li>
+        <li><a href="/managed-nodes" class="footer-nav-link">Managed Nodes</a></li>
+        <li><a href="/fernwartung" class="footer-nav-link">Fernwartung</a></li>
+        <li><a href="/terminbuchungen" class="footer-nav-link">Terminbuchung</a></li>
+        <li><a href="/preise" class="footer-nav-link">Preise</a></li>
+        <li><a href="/kontakt-und-impressum" class="footer-nav-link">Kontakt &amp; Impressum</a></li>
+        <li><a href="https://wiki.neuhaus-it.de/kontakt" class="footer-nav-link" target="_blank" rel="noopener">Datenschutz</a></li>
+      </ul>
+    </nav>
+
+    {# Spalte 3: Externe Angebote #}
+    <nav class="footer-nav" aria-label="Weitere Angebote">
+      <p class="footer-nav-title">Meine Angebote</p>
+      <ul class="footer-nav-list" role="list">
+        {% for offer in offers %}
+          <li>
+            <a href="{{ offer.url }}"
+               class="footer-nav-link"
+               target="_blank"
+               rel="noopener noreferrer">
+              {{ offer.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copyright">
+      CC BY-NC-SA 4.0 or later by {{ contact.name }} (Inh. {{ contact.owner }})
+    </p>
+    <p class="footer-servicegebiete">
+      Servicegebiet: {{ servicegebiete }}
+    </p>
+  </div>
+</footer>
